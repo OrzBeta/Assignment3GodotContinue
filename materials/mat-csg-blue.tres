@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2ieivmij3731"]
+
+[ext_resource type="Texture2D" uid="uid://75mt1poymuw1" path="res://assets/skyboxes/grid-blue-64px.png" id="1_t4b50"]
+
+[resource]
+albedo_texture = ExtResource("1_t4b50")
+roughness = 0.9
+backlight = Color(1, 1, 1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+billboard_keep_scale = true

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cdlu7ulb0wkfa"]
+
+[ext_resource type="Script" uid="uid://dsqe5fpuobcu3" path="res://scenes/portal_script.gd" id="1_v0xau"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tdbmw"]
+top_radius = 1.3974609
+bottom_radius = 1.3974609
+height = 3.102539
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0ekuu"]
+top_radius = 0.0
+bottom_radius = 0.1
+height = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdbmw"]
+size = Vector3(7.181885, 9.153778, 0.35714722)
+
+[node name="Portal" type="Node3D" unique_id=2134881050]
+script = ExtResource("1_v0xau")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1734428434]
+visible = false
+layers = 64
+size = Vector3(7.0585938, 9.097656, 0.037841797)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=247823545]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.05303221, 0.34419242)
+mesh = SubResource("CylinderMesh_tdbmw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=845085497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5877512)
+cull_mask = 1048511
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=334730615]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ekuu")
+
+[node name="Collision1" type="Area3D" parent="." unique_id=1956683732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24281394)
+
+[node name="TeleportArea1" type="CollisionShape3D" parent="Collision1" unique_id=866298866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4860264)
+shape = SubResource("BoxShape3D_tdbmw")
+debug_color = Color(5.7756904e-07, 0.6201559, 0.57138103, 0.41960785)
+
+[node name="Blocker" type="CSGBox3D" parent="." unique_id=1518066983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03100586, -0.005554199, 0)
+use_collision = true
+size = Vector3(7.456543, 9.368774, 1)
+
+[connection signal="body_entered" from="Collision1" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Collision1" to="." method="_on_collision_1_body_exited"]

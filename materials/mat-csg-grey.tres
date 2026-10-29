@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3do06pr48lv2"]
+
+[ext_resource type="Texture2D" uid="uid://bdccnbkukylo4" path="res://assets/skyboxes/grid-grey-64px.png" id="1_xnlog"]
+
+[resource]
+albedo_texture = ExtResource("1_xnlog")
+metallic = 0.5
+roughness = 0.7
+rim_enabled = true
+ao_enabled = true
+backlight = Color(0.41517708, 0.86239254, 0.9071334, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2

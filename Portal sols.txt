@@ -1,0 +1,16 @@
+Portal sols
+
+if all portals are formed from one end, have it have 2 states: receiving and emittting
+
+there are 2 functions a portal must do (in a pair)
+
+1. show image of the place on the other side: ie receive information and display
+
+2. record information on its side to show on the other portal in the pair
+
+to do this it needs the following components
+
+plane to display image
+camera to capture image
+
+the camera cannot render the portal itself, so it will ignore the cull mask of the portal (7 for ss and giggles)

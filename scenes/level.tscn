@@ -1,0 +1,331 @@
+[gd_scene format=3 uid="uid://dh1rku1hev3ad"]
+
+[ext_resource type="Material" uid="uid://c6p21rmf1c4to" path="res://materials/mat-csg-green.tres" id="1_mx8sn"]
+[ext_resource type="Material" uid="uid://2ieivmij3731" path="res://materials/mat-csg-blue.tres" id="2_ppgk2"]
+[ext_resource type="Material" uid="uid://b3do06pr48lv2" path="res://materials/mat-csg-grey.tres" id="3_2r41h"]
+[ext_resource type="Material" uid="uid://bvk5insqqa3ww" path="res://materials/mat-csg-yellow.tres" id="4_klq6b"]
+
+[node name="Level" type="Node3D" unique_id=344756965]
+
+[node name="Ground" type="CSGBox3D" parent="." unique_id=863490129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009925842, -0.9909706, 0.002585411)
+use_collision = true
+size = Vector3(100, 3, 100)
+material = ExtResource("1_mx8sn")
+metadata/_edit_lock_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Ground" unique_id=64287178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.5, -10)
+operation = 2
+radius = 8.971191
+height = 1.0
+sides = 16
+material = ExtResource("2_ppgk2")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Ground" unique_id=1340832886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.990074, 0.9909706, 1.9974146)
+radius = 4.2226563
+material = ExtResource("3_2r41h")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Ground" unique_id=111841498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.990074, 1.4902205, -9.002585)
+radius = 2.0
+height = 1.0005
+material = ExtResource("3_2r41h")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Ground" unique_id=1192298756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.990074, 1.4909706, -15.002585)
+radius = 4.2226563
+height = 3.0
+material = ExtResource("3_2r41h")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Ground" unique_id=1434526516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.990074, 2.2409706, -15.002585)
+radius = 2.0
+height = 4.5
+material = ExtResource("3_2r41h")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Ground" unique_id=254861903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.009926, 1.9909706, 17.997414)
+radius = 4.2226563
+height = 4.0
+sides = 6
+material = ExtResource("1_mx8sn")
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Ground" unique_id=1872783640]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -11.009926, 2.9909706, 17.997414)
+radius = 4.2226563
+height = 6.0
+sides = 6
+material = ExtResource("1_mx8sn")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Ground" unique_id=1834835171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.149854, 9.009818, -23.502586)
+material = ExtResource("4_klq6b")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground" unique_id=1284676265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, -26)
+size = Vector3(12, 7, 2)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Ground/CSGBox3D" unique_id=184776710]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.5, 0.032814026)
+operation = 2
+radius = 3.3
+height = 2.078125
+sides = 32
+
+[node name="House" type="CSGCombiner3D" parent="." unique_id=33852501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House" unique_id=317016486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3.5, -5)
+size = Vector3(10, 6, 9)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House" unique_id=1262762750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1.5, -7.5)
+size = Vector3(2, 2, 4)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House" unique_id=223096603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.5, -10.5)
+size = Vector3(5, 4, 2)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="House" unique_id=135183757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 7, -1)
+size = Vector3(6, 1, 1)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="House" unique_id=1977551936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -5.5)
+size = Vector3(1, 1, 8)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="House" unique_id=187576367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -10.5)
+size = Vector3(7, 2, 2)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House" unique_id=1947547536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2.5, -4.5)
+operation = 2
+size = Vector3(10, 2, 2)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House" unique_id=691346810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2.5, -3)
+operation = 2
+size = Vector3(10, 4, 3)
+material = ExtResource("3_2r41h")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="House" unique_id=1987394215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -5)
+light_color = Color(1, 0.7058824, 0.60784316, 1)
+light_energy = 2.245
+
+[node name="Bridge" type="CSGCombiner3D" parent="." unique_id=660854334]
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Bridge" unique_id=1679022633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 5.5, 9.5)
+polygon = PackedVector2Array(0, 0, 0, 1, 6, 4, 6, 3)
+depth = 3.0
+material = ExtResource("3_2r41h")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Bridge" unique_id=1735024806]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13.5, 5.5, 6.5)
+polygon = PackedVector2Array(0, 0, 0, 1, 6, 4, 6, 3)
+depth = 3.0
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Bridge" unique_id=210528352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 6, 2.5)
+size = Vector3(4, 1, 14)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Bridge" unique_id=731973489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, -7.5)
+size = Vector3(3, 1, 34)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Bridge" unique_id=732369564]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 21.5, 2.5, 7.5)
+size = Vector3(4, 4, 4)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Bridge" unique_id=966910398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.23909, 2.5, 8.5)
+size = Vector3(1, 4, 49)
+material = ExtResource("1_mx8sn")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Bridge" unique_id=1840108683]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -17.68332, 2.5, -24.045824)
+size = Vector3(1, 4, 18)
+material = ExtResource("1_mx8sn")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Bridge" unique_id=816511124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3.5, 8)
+size = Vector3(1, 6, 1)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Bridge" unique_id=780315377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 9, 8)
+size = Vector3(8, 1, 3)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Bridge" unique_id=100881930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 9, 15.5)
+size = Vector3(3, 1, 14)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Bridge" unique_id=1467238477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 9, 21)
+size = Vector3(3, 1, 3)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Bridge" unique_id=1457573785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 21)
+size = Vector3(1, 9, 1)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Bridge" unique_id=1611056496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3.5, 8)
+size = Vector3(1, 6, 1)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Bridge" unique_id=841019459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3.5, -23)
+size = Vector3(1, 6, 1)
+material = ExtResource("3_2r41h")
+
+[node name="Building" type="CSGCombiner3D" parent="." unique_id=476853150]
+use_collision = true
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Building" unique_id=594914017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 8.200001, 18.5)
+size = Vector3(8, 15.400001, 8)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Building" unique_id=2007365034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 6.5, 13.5)
+size = Vector3(6, 12, 2)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Building" unique_id=1630295336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 15.349999, 13.5)
+size = Vector3(2, 1.1, 2)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Building" unique_id=1062557289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 11, 21.5)
+operation = 2
+size = Vector3(8, 3, 2)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Building" unique_id=960259297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 13.75, 15.95)
+operation = 2
+size = Vector3(2, 2.5, 2.9)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Building" unique_id=982541437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 11, 18.5)
+operation = 2
+size = Vector3(2, 3, 8)
+material = ExtResource("3_2r41h")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Building" unique_id=124447042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 10.5, 17)
+operation = 2
+polygon = PackedVector2Array(-3.5, 2, -3.5, 5, 1, 2, 1, -1)
+depth = 2.0
+material = ExtResource("3_2r41h")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Building" unique_id=1776104647]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 11.5, 10.5, 12.5)
+polygon = PackedVector2Array(-3, 2, -3, 5.4, 1, 2)
+depth = 2.0
+material = ExtResource("3_2r41h")
+
+[node name="Interior (Unused)" type="CSGCombiner3D" parent="." unique_id=1523258843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Interior (Unused)" unique_id=341022398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+flip_faces = true
+size = Vector3(27, 8, 16)
+material = ExtResource("3_2r41h")
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Interior (Unused)" unique_id=913439241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 0.5)
+flip_faces = true
+size = Vector3(10, 2, 3)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Interior (Unused)" unique_id=842019865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -3, 2.5)
+operation = 2
+flip_faces = true
+size = Vector3(10, 2, 6)
+material = ExtResource("3_2r41h")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Interior (Unused)/CSGBox3D2" unique_id=1147763795]
+transform = Transform3D(-4.4703484e-08, 0, -1, 0, 1, 0, 1, 0, -4.4703484e-08, -5.6, 1, -2.9)
+operation = 2
+flip_faces = true
+polygon = PackedVector2Array(-0.1, -2, -0.1, 1, 2.9, 1, 2.9, 0)
+depth = 2.5
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Interior (Unused)" unique_id=61184596]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.5, -3, -3)
+operation = 2
+flip_faces = true
+size = Vector3(16, 2, 6)
+material = ExtResource("3_2r41h")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Interior (Unused)/CSGBox3D4" unique_id=2054608838]
+transform = Transform3D(-4.4703484e-08, 0, -1, 0, 1, 0, 1, 0, -4.4703484e-08, -5.6, 1, -2.9)
+operation = 2
+flip_faces = true
+polygon = PackedVector2Array(-0.1, -2, -0.1, 1, 2.9, 1, 2.9, 0)
+depth = 2.5
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Interior (Unused)" unique_id=1005425132]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.5, 0, -5.5)
+operation = 2
+flip_faces = true
+size = Vector3(1, 8, 1)
+material = ExtResource("3_2r41h")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Interior (Unused)" unique_id=764419022]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.25, -2.5, -8.05)
+operation = 2
+flip_faces = true
+size = Vector3(6.1, 3, 6.5)
+material = ExtResource("3_2r41h")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Interior (Unused)" unique_id=1428918217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 3)
+light_color = Color(0.8666667, 1, 0.8392157, 1)
+light_energy = 7.374
+light_size = 0.302
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Interior (Unused)" unique_id=2074655343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, -2)
+light_color = Color(0.8666667, 1, 0.8392157, 1)
+light_energy = 7.374
+light_size = 0.302
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Interior (Unused)" unique_id=1373726616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, -2, 2)
+operation = 2
+flip_faces = true
+polygon = PackedVector2Array(-0.1, -1, -0.1, 0, 2.9, 1, 2.9, 0)
+depth = 2.5
+material = ExtResource("3_2r41h")
