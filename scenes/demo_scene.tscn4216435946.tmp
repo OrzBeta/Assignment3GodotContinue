@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://d0rdw71y7eick"]
+
+[ext_resource type="Script" uid="uid://dlcrq24mcy6yp" path="res://cameraPositions.gd" id="1_0ekuu"]
+[ext_resource type="PackedScene" uid="uid://cj24unmrk36un" path="res://scenes/player.tscn" id="1_03k34"]
+[ext_resource type="PackedScene" uid="uid://cdlu7ulb0wkfa" path="res://scenes/portal.tscn" id="2_ba4t3"]
+[ext_resource type="Script" uid="uid://ky6elg7kvquk" path="res://scenes/viewport.gd" id="4_8m1ix"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_03k34"]
+sky_top_color = Color(0.32105368, 0.62951106, 0.7569859, 1)
+sky_horizon_color = Color(0.83086336, 0.83968043, 0.8522326, 1)
+ground_bottom_color = Color(0.15342471, 0.22538161, 0.46489918, 1)
+ground_horizon_color = Color(0.83086336, 0.83968043, 0.8522326, 1)
+
+[sub_resource type="Sky" id="Sky_ba4t3"]
+sky_material = SubResource("ProceduralSkyMaterial_03k34")
+
+[sub_resource type="Environment" id="Environment_0ekuu"]
+background_mode = 2
+sky = SubResource("Sky_ba4t3")
+ambient_light_source = 3
+ambient_light_color = Color(0.8744622, 0.70174986, 0.6593994, 1)
+reflected_light_source = 2
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.1513406, 0.16828382, 0.19464809, 1)
+adjustment_enabled = true
+adjustment_brightness = 1.07
+adjustment_contrast = 1.25
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8m1ix"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bk2b3"]
+
+[node name="demoScene" type="Node3D" unique_id=1362136794]
+script = ExtResource("1_0ekuu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1013622856]
+environment = SubResource("Environment_0ekuu")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=634384518]
+transform = Transform3D(100, 0, 0, 0, 10, 0, 0, 0, 100, -4.182214, -5.251502, 0.86351395)
+use_collision = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1749651984]
+transform = Transform3D(-0.99929166, -8.7805124e-11, -0.037631776, -0.023134256, 0.7887195, 0.61431783, 0.029680913, 0.61475325, -0.7881609, 0, 44.878567, 0)
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="DirectionalLight3D" unique_id=1240470040]
+transform = Transform3D(1, 5.9604645e-08, 8.940697e-08, -5.9604645e-08, 0.9999999, -2.9802322e-08, -1.1920929e-07, -2.9802322e-08, 1, -13.878678, 38.198875, 20.496601)
+visible = false
+
+[node name="Player" parent="." unique_id=1159455983 instance=ExtResource("1_03k34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.137207, 15.191358, -22.650822)
+SPEED = 10.0
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=2136476266]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -27.325891, 6.3459005, -52.61899)
+
+[node name="Control" type="Control" parent="." unique_id=371364346]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ViewA" type="TextureRect" parent="Control" unique_id=749873056]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 19.0
+offset_right = 324.0
+offset_bottom = 185.0
+texture = SubResource("PlaceholderTexture2D_8m1ix")
+expand_mode = 2
+script = ExtResource("4_8m1ix")
+
+[node name="ViewB" type="TextureRect" parent="Control" unique_id=883792566]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 202.0
+offset_right = 324.0
+offset_bottom = 382.0
+texture = SubResource("PlaceholderTexture2D_bk2b3")
+expand_mode = 2
+script = ExtResource("4_8m1ix")
+
+[node name="Portal" parent="." unique_id=2134881050 node_paths=PackedStringArray("otherPortal") instance=ExtResource("2_ba4t3")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -33.06588, 5.1927786, -4.446718)
+otherPortal = NodePath("../Portal2")
+
+[node name="Portal2" parent="." unique_id=1529757221 node_paths=PackedStringArray("otherPortal") instance=ExtResource("2_ba4t3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.617954, 5.5742884, -10.041509)
+otherPortal = NodePath("../Portal")

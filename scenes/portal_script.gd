@@ -5,6 +5,8 @@ class_name Portal
 @export var otherPortal: Portal
 @onready var camera_3d: Camera3D = $Camera3D
 
+@export var view_camera: Camera3D
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -17,7 +19,14 @@ func _process(delta: float) -> void:
 		var relPos = playerCam.global_position - global_position
 		otherCam.position = transform.basis * relPos
 		otherCam.rotation = playerHead.rotation
-	
+		
+		if view_camera and camera_3d:
+		# Update any properties to copy the camera exactly.
+		# I don't plan on changing anything put the transform at runtime,
+		# but if you have more camera properties that would change at runtime, add them below.
+			view_camera.global_transform = camera_3d.global_transform 
+			view_camera.global_rotation = camera_3d.global_rotation 
+		
 	#if otherPortal:
 		#var pos := otherPortal.camera_3d.global_position
 		#print(otherPortal.name, pos)
@@ -46,7 +55,10 @@ func _on_body_entered(player: Node3D) -> void:
 
 	##keep player y constant
 	if otherPortal:
-		player.global_position = otherPortal.global_position + dif + Vector3(0,-5,0)
+		player.global_position = otherPortal.global_position + dif + Vector3(0,0,2)
+		
+		
+		
 		return
 		#if player.global_position.z > self.global_position.z:
 			#player.global_position = otherPortal.global_position - dif
